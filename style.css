@@ -1,0 +1,931 @@
+/* =========================================================
+   1. GENERAL RESET & COLOR VARIABLES
+   ========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary-green: #052607;    /* Fresh Light Green */
+    --dark-green: #063009;       /* Dark Forest Green for Headers */
+    --cream-bg: #FCFBF7;         /* Soft Cream Background */
+    --card-bg: #FFFFFF;          /* Pure White for Cards */
+    --gold-accent: #D4AF37;      /* Warm Gold Accent */
+    --text-color: #2C3E50;       /* Dark Readable Text */
+    --light-green-bg: #E8F5E9;   /* Very Light Green Tint */
+}
+
+body {
+    background-color: var(--cream-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================================================
+   2. HEADER & NAVIGATION BAR
+   ========================================================= */
+.header {
+    background-color: var(--dark-green);
+    color: #FFFFFF;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-bottom: 3px solid var(--gold-accent);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Premium Glass & Gold Logo Container */
+.logo-badge-img {
+    position: relative;
+    display: inline-block;
+}
+
+.logo-badge-img img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--gold-accent); /* Warm Gold Accent Border */
+    box-shadow: 0 4px 15px rgba(214, 158, 46, 0.35); /* Soft Golden Glow */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    background-color: #FFFFFF;
+}
+
+/* Hover Effect on Logo */
+.logo-badge-img img:hover {
+    transform: rotate(5deg) scale(1.08); /* Light Tilt & Zoom */
+    box-shadow: 0 6px 20px rgba(46, 125, 50, 0.4); /* Green Accent Glow */
+}   
+.logo-badge-text {
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(135deg, var(--dark-green), var(--primary-green));
+    border: 2px solid var(--gold-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.st-initials {
+    color: var(--gold-accent);
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.st-leaf {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    font-size: 14px;
+}
+.brand-info h1 {
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+}
+
+.brand-info p {
+    font-size: 12px;
+    color: var(--gold-accent);
+    font-weight: 600;
+}
+
+.navbar a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover, .navbar a.active {
+    color: var(--gold-accent);
+}
+
+.btn-login {
+    background-color: var(--primary-green);
+    color: #FFFFFF !important;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: 600 !important;
+    border: 1px solid var(--gold-accent);
+}
+
+.btn-login:hover {
+    background-color: var(--gold-accent);
+    color: var(--dark-green) !important;
+}
+
+.header-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.owner-name {
+    font-size: 13px;
+    color: #FFFFFF;
+}
+
+.header-phone {
+    color: var(--gold-accent);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* =========================================================
+   3. HERO BANNER & FALLING LEAVES ANIMATION
+   ========================================================= */
+.hero {
+    position: relative;
+    background: linear-gradient(135deg, #032905 0%, #043507 100%);
+    color: #FFFFFF;
+    padding: 90px 0;
+    text-align: center;
+    overflow: hidden;
+    border-bottom: 5px solid var(--gold-accent);
+}
+
+/* Falling Leaves Container & Keyframes */
+.leaves-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.leaf {
+    position: absolute;
+    top: -40px;
+    font-size: 24px;
+    user-select: none;
+    animation: fall linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg) translateX(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(200px) rotate(180deg) translateX(30px);
+    }
+    100% {
+        transform: translateY(450px) rotate(360deg) translateX(-30px);
+        opacity: 0;
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.tagline-badge {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--gold-accent);
+    padding: 8px 20px;
+    border-radius: 25px;
+    border: 1px solid var(--gold-accent);
+    font-size: 15px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.main-title {
+    font-size: 46px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.sub-title {
+    font-size: 22px;
+    color: var(--gold-accent);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.address-text {
+    font-size: 16px;
+    margin-bottom: 30px;
+    opacity: 0.95;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn-whatsapp {
+    background-color: #02250f;
+    color: #FFFFFF;
+}
+
+.btn-whatsapp:hover {
+    background-color: #0b2514;
+    transform: translateY(-3px);
+}
+
+.btn-call {
+    background-color: var(--gold-accent);
+    color: var(--dark-green);
+}
+
+.btn-call:hover {
+    background-color: #f1c40f;
+    transform: translateY(-3px);
+}
+
+/* =========================================================
+   4. ABOUT SECTION
+   ========================================================= */
+.about-section {
+    padding: 50px 0 20px 0;
+}
+
+.about-card {
+    background-color: var(--card-bg);
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border-left: 6px solid var(--primary-green);
+    text-align: center;
+}
+
+.about-card h2 {
+    color: var(--dark-green);
+    margin-bottom: 15px;
+    font-size: 26px;
+}
+
+.about-card p {
+    font-size: 16px;
+    color: #4A5568;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* =========================================================
+   5. PRODUCTS GRID SECTION
+   ========================================================= */
+.products-section {
+    padding: 50px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    color: var(--dark-green);
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.section-header p {
+    color: var(--primary-green);
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background-color: var(--card-bg);
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    border-top: 4px solid var(--primary-green);
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(46, 125, 50, 0.15);
+    border-top-color: var(--gold-accent);
+}
+
+.product-icon {
+    font-size: 45px;
+    margin-bottom: 12px;
+}
+
+.product-card h3 {
+    color: var(--dark-green);
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.product-card p {
+    font-size: 13px;
+    color: #718096;
+}
+
+/* =========================================================
+   6. FOOTER
+   ========================================================= */
+.footer {
+    background-color: var(--dark-green);
+    color: #FFFFFF;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 50px;
+    border-top: 4px solid var(--gold-accent);
+    font-size: 14px;
+}
+
+.footer p {
+    opacity: 0.9;
+    margin: 3px 0;
+}
+
+/* =========================================================
+   7. RESPONSIVE DESIGN (FOR MOBILE)
+   ========================================================= */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .main-title {
+        font-size: 32px;
+    }
+    
+    .sub-title {
+        font-size: 18px;
+    }
+    
+    .header-contact {
+        align-items: center;
+    }
+}
+/* =========================================================
+   8. AUTH / LOGIN & REGISTER STYLING
+   ========================================================= */
+.auth-container {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 15px;
+}
+
+.auth-card {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 420px;
+    padding: 35px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-top: 5px solid var(--primary-green);
+    text-align: center;
+}
+
+.auth-card h2 {
+    color: var(--dark-green);
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.auth-sub {
+    font-size: 13px;
+    color: #718096;
+    margin-bottom: 25px;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--dark-green);
+    display: block;
+    margin-bottom: 6px;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #CBD5E0;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: var(--cream-bg);
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 5px rgba(46, 125, 50, 0.3);
+}
+
+.btn-login-submit {
+    background-color: var(--primary-green);
+    color: #FFFFFF;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.btn-login-submit:hover {
+    background-color: var(--dark-green);
+}
+
+.auth-footer {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #4A5568;
+}
+
+.auth-footer a {
+    color: var(--primary-green);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+/* =========================================================
+   9. ADMIN DASHBOARD STYLING
+   ========================================================= */
+.dashboard-container {
+    padding: 40px 0;
+}
+
+.dashboard-welcome {
+    background-color: var(--light-green-bg);
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 5px solid var(--primary-green);
+    margin-bottom: 30px;
+}
+
+.dashboard-welcome h2 {
+    color: var(--dark-green);
+    font-size: 24px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.dashboard-card {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--primary-green);
+}
+
+.dashboard-card h3 {
+    color: var(--dark-green);
+    margin-bottom: 20px;
+    font-size: 18px;
+    border-bottom: 2px solid var(--cream-bg);
+    padding-bottom: 8px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.rate-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.rate-table th, .rate-table td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #E2E8F0;
+    font-size: 14px;
+}
+
+.rate-table th {
+    background-color: var(--dark-green);
+    color: #FFFFFF;
+}
+
+.btn-delete {
+    background-color: #E53E3E;
+    color: #FFFFFF;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.btn-delete:hover {
+    background-color: #C53030;
+}
+/* =========================================================
+   10. PUBLIC MANDI RATES SECTION STYLING
+   ========================================================= */
+.rates-section {
+    padding: 50px 0;
+}
+
+.rates-card {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border-top: 5px solid var(--primary-green);
+}
+
+.rate-table-public {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.rate-table-public th {
+    background-color: var(--dark-green);
+    color: #FFFFFF;
+    padding: 14px 12px;
+    text-align: left;
+    font-size: 15px;
+}
+
+.rate-table-public td {
+    padding: 12px;
+    border-bottom: 1px solid #E2E8F0;
+    font-size: 14px;
+}
+
+.price-tag {
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.min-price {
+    color: #D69E2E;
+    background-color: #FEFCBF;
+}
+
+.max-price {
+    color: #2F855A;
+    background-color: #C6F6D5;
+}
+
+.badge-quality {
+    background-color: var(--light-green-bg);
+    color: var(--dark-green);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.rates-notice {
+    background-color: var(--cream-bg);
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #4A5568;
+    border-left: 4px solid var(--gold-accent);
+}
+/* =========================================================
+   11. ENQUIRY FORM SECTION STYLING
+   ========================================================= */
+.enquiry-section {
+    padding: 50px 0;
+}
+
+.enquiry-card {
+    background-color: var(--card-bg);
+    padding: 35px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    border-top: 5px solid var(--primary-green);
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.enquiry-form .form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.enquiry-form .form-group {
+    margin-bottom: 18px;
+}
+
+.enquiry-form label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark-green);
+    display: block;
+    margin-bottom: 6px;
+}
+
+.enquiry-form input, 
+.enquiry-form select, 
+.enquiry-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #CBD5E0;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: var(--cream-bg);
+    outline: none;
+    transition: 0.3s;
+}
+
+.enquiry-form input:focus, 
+.enquiry-form select:focus, 
+.enquiry-form textarea:focus {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 6px rgba(46, 125, 50, 0.25);
+}
+
+.btn-whatsapp-submit {
+    background-color: #052410;
+    color: #FFFFFF;
+    border: none;
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp-submit:hover {
+    background-color: #092e16;
+    transform: translateY(-2px);
+}
+.lang-btn {
+    background-color: var(--gold-accent);
+    color: var(--dark-green);
+    border: none;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 5px;
+    transition: 0.3s;
+}
+
+.lang-btn:hover {
+    background-color: #ffffff;
+    transform: scale(1.05);
+}
+/* Bill Generator Styling */
+.full-width-card {
+    grid-column: 1 / -1;
+}
+
+.bill-form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.bill-preview-box {
+    margin-top: 30px;
+    background-color: #FFFFFF;
+    border: 2px dashed var(--dark-green);
+    padding: 25px;
+    border-radius: 12px;
+    color: var(--text-color);
+}
+
+.bill-header {
+    text-align: center;
+}
+
+.bill-header h2 {
+    color: var(--dark-green);
+    font-size: 24px;
+}
+
+.bill-details {
+    margin: 20px 0;
+    line-height: 1.8;
+}
+
+.total-amount-box {
+    background-color: var(--light-green-bg);
+    color: var(--dark-green);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+.bill-footer {
+    text-align: right;
+    margin-top: 25px;
+    font-size: 13px;
+}
+/* =========================================================
+   CROP INFORMATION POPUP MODAL STYLING
+   ========================================================= */
+.crop-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.crop-modal-content {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 600px;
+    border-radius: 16px;
+    padding: 25px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border-top: 6px solid var(--primary-green);
+    animation: popupAnimation 0.3s ease-out;
+}
+
+@keyframes popupAnimation {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.crop-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #718096;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.crop-modal-close:hover {
+    color: #E53E3E;
+}
+
+.crop-modal-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--cream-bg);
+    padding-bottom: 12px;
+}
+
+.crop-modal-icon {
+    font-size: 36px;
+    background-color: var(--light-green-bg);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.crop-modal-header h3 {
+    color: var(--dark-green);
+    font-size: 22px;
+}
+
+.crop-modal-header p {
+    font-size: 13px;
+    color: #718096;
+}
+
+.crop-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.crop-info-box {
+    background-color: var(--cream-bg);
+    padding: 12px 15px;
+    border-radius: 8px;
+    border-left: 4px solid var(--gold-accent);
+}
+
+.crop-info-box span {
+    display: block;
+    font-size: 12px;
+    color: #4A5568;
+    margin-bottom: 3px;
+}
+
+.crop-info-box strong {
+    font-size: 14px;
+    color: var(--dark-green);
+}
+
+.crop-modal-desc {
+    background-color: var(--light-green-bg);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.crop-modal-desc h4 {
+    color: var(--dark-green);
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.crop-modal-desc p {
+    font-size: 13px;
+    color: #2D3748;
+    line-height: 1.5;
+}
+
+.crop-modal-footer {
+    margin-top: 15px;
+}

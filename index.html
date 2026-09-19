@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santu Traders ASHOK  BHARDWAJ | </title>
+    <!-- Website Favicon Icon -->
+<link rel="icon" type="image/png" href="LOGO - Copy (3).png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- Product Detail Modal (Crop Info Popup) -->
+    <div id="cropModal" class="crop-modal">
+        <div class="crop-modal-content">
+            <span class="crop-modal-close" id="closeCropModal">&times;</span>
+            
+            <div class="crop-modal-header">
+                <div class="crop-modal-icon" id="mCropIcon">🌾</div>
+                <div>
+                    <h3 id="mCropTitle">Crop Name</h3>
+                    <p id="mCropSubtitle">Santu Traders - Crop Information Guide</p>
+                </div>
+            </div>
+
+            <div class="crop-info-grid">
+                <div class="crop-info-box">
+                    <span>🗓️ बुवाई का समय (Sowing Time):</span>
+                    <strong id="mCropSowing">-</strong>
+                </div>
+
+                <div class="crop-info-box">
+                    <span>🌱 प्रति बीघा बीज (Seed / Bigha):</span>
+                    <strong id="mCropSeed">-</strong>
+                </div>
+
+                <div class="crop-info-box">
+                    <span>⏱️ फसल तैयार होने की अवधि (Duration):</span>
+                    <strong id="mCropDuration">-</strong>
+                </div>
+
+                <div class="crop-info-box">
+                    <span>📊 मंडी डिमांड & व्यापार (Mandi Demand):</span>
+                    <strong id="mCropDemand">-</strong>
+                </div>
+            </div>
+
+            <div class="crop-modal-desc">
+                <h4>💡 विशेष सलाह & विवरण (Farmer Advisory):</h4>
+                <p id="mCropDesc">-</p>
+            </div>
+
+            <div class="crop-modal-footer">
+                <a href="https://wa.me/919755631229" target="_blank" class="btn btn-whatsapp-submit" style="text-align:center; text-decoration:none;">
+                    💬 इस फसल/बीज के लिए संपर्क करें (WhatsApp)
+                </a>
+            </div>
+        </div>
+    </div>  
+<body>
+
+    <!-- Header & Navigation Bar -->
+    <header class="header">
+        <div class="container nav-container">
+         <div class="logo-badge-img">
+    <img src="LOGO - Copy (3).png" alt="Santu Traders Shop Logo">
+</div>
+
+            <nav class="navbar" id="navbar">
+                <a href="index.html" class="active">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#products">Products</a>
+                <a href="#rates">Daily Mandi Bhav</a>
+                <a href="#contact">Contact</a>
+                <a href="login.html" class="btn-login">Login / Register</a>
+            </nav>
+
+            <div class="header-contact">
+                <span class="owner-name">👤 Ashok Bhardwaj</span>
+                <a href="tel:9755631229" class="header-phone">📞 9755631229</a>
+        
+           <!-- Language Switcher Button -->
+           <button id="langToggleBtn" class="lang-btn">🌐 English</button>
+
+            </div>
+        </div>
+     
+    </header>
+
+    <!-- Hero Banner with Falling Leaves Animation -->
+    <section class="hero">
+        <!-- Falling Leaves Overlay Container -->
+        <div class="leaves-container" id="leavesContainer"></div>
+
+        <div class="container hero-content">
+            <span class="tagline-badge">🌾 कृषि उत्पाद खरीदे एवं बेचे जाते हैं</span>
+            <h2 class="main-title">SANTU TRADERS</h2>
+            <h3 class="sub-title">SUPPLIER & COMMISSION AGENT</h3>
+            <p class="address-text">📍 Shop No. 8, Jamuniya Klan, Neemuch (M.P.)</p>
+            
+            <div class="hero-buttons">
+                <a href="https://wa.me/919755631229?text=Hello%20Santu%20Traders,%20mujhe%20krishi%20utpad/herbs%20ke%20bare%20mein%20jaankari%20chahiye." target="_blank" class="btn btn-whatsapp">
+                    💬 WhatsApp Inquiry
+                </a>
+                <a href="tel:9755631229" class="btn btn-call">
+                    📞 Direct Call
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section container">
+        <div class="about-card">
+            <h2>Welcome to Santu Traders</h2>
+            <p>Hum नीमच (Neemuch Mandi) ke mukhya <strong>Supplier & Commission Agent</strong> hain. Hum kisaano aur vyapariyon ke beech uchit daam par <strong>Lahsun, Pyaj, Dhaniya, Ajwain, Ashwagandha, Safed Musli, Amla, Tulsi, Kalmegh</strong> aur sabhi prakar ki ayurvedic jadi-bootiyon (Herbs) ki kharidi evam bikri ka vyapar karte hain.</p>
+        </div>
+    </section>
+    <!-- Live Mandi Bhav Section -->
+    <section id="rates" class="rates-section container">
+        <div class="section-header">
+            <h2>🌾 आज का नीमच मंडी भाव (Live Mandi Rates)</h2>
+            <p>Santu Traders - ताज़ा ताज़ा बाज़ार भाव (Daily Updated Prices)</p>
+        </div>
+
+        <div class="rates-card">
+            <div class="table-responsive">
+                <table class="rate-table-public">
+                    <thead>
+                        <tr>
+                            <th>फसल / जड़ी-बूटी (Crop / Herb)</th>
+                            <th>न्यूनतम भाव (Min Rate)</th>
+                            <th>अधिकतम भाव (Max Rate)</th>
+                            <th>क्वालिटी (Quality)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="publicRateTableBody">
+                        <!-- Dynamic Mandi Rates will load here via script.js -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="rates-notice">
+                <p>💡 <em>नोट: मंडी भाव बाज़ार की आवक और क्वालिटी के अनुसार बदल सकते हैं। सटीक जानकारी के लिए अशोक भारद्वाज जी से संपर्क करें: <strong>9755631229</strong></em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Products Grid Section -->
+    <section id="products" class="products-section container">
+        <div class="section-header">
+            <h2>Our Main Agriculture & Herb Products</h2>
+            <p>कृषि उत्पाद एवं जड़ी-बूटियों (Herbs) के थोक विक्रेता एवं कमीशन एजेंट</p>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-icon">🧄</div>
+                <h3>Garlic (लहसुन)</h3>
+                <p>Mandi Trading & Bulk Supply</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">🧅</div>
+                <h3>Onion (प्याज)</h3>
+                <p>Fresh Quality Direct From Farmers</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">🌿</div>
+                <h3>Dhaniya (धनिया)</h3>
+                <p>Premium Spices & Seeds</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">🌱</div>
+                <h3>Ajwain (अजवाइन)</h3>
+                <p>Cleaned & Selected Quality</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">🪵</div>
+                <h3>Ashwagandha</h3>
+                <p>Medicinal Roots & Raw Produce</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">🌾</div>
+                <h3>Safed Musli</h3>
+                <p>High Grade Ayurvedic Herb</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">🍏</div>
+                <h3>Awala (आंवला)</h3>
+                <p>Fresh & Dry Produce Supply</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">🍃</div>
+                <h3>Tulsi & Kalmegh</h3>
+                <p>All Herbs & Raw Material Products</p>
+            </div>
+        </div>
+    </section>
+<!-- Enquiry / Kisan & Buyer Contact Form Section -->
+    <section id="enquiry" class="enquiry-section container">
+        <div class="section-header">
+            <h2>📩 व्यापारिक पूछताछ एवं फसल बिक्री फॉर्म (Enquiry Form)</h2>
+            <p>फसल/जड़ी-बूटी खरीदने या बेचने के लिए नीचे फॉर्म भरें, सीधे WhatsApp पर मैसेज जाएगा!</p>
+        </div>
+
+        <div class="enquiry-card">
+            <form id="enquiryForm" class="enquiry-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>आपका पूरा नाम (Full Name) *</label>
+                        <input type="text" id="eqName" placeholder="अपना नाम लिखें" required>
+                    </div>
+                    <div class="form-group">
+                        <label>मोबाइल नंबर (Mobile Number) *</label>
+                        <input type="tel" id="eqPhone" placeholder="10 अंकों का नंबर" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>शहर / गाँव का नाम (Location) *</label>
+                        <input type="text" id="eqCity" placeholder="जैसे: नीमच / जामुनिया" required>
+                    </div>
+                    <div class="form-group">
+                        <label>आप क्या करना चाहते हैं? (Role) *</label>
+                        <select id="eqType" required>
+                            <option value="फसल बेचना चाहता हूँ (Farmer)">फसल बेचना चाहता हूँ (Kisan / Seller)</option>
+                            <option value="माल/जड़ी-बूटी खरीदना चाहता हूँ (Buyer)">माल/जड़ी-बूटी खरीदना चाहता हूँ (Buyer)</option>
+                            <option value="मंडी भाव की जानकारी चाहिए">मंडी भाव की जानकारी चाहिए</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>फसल / उत्पाद का नाम (Crop/Product Name)</label>
+                    <select id="eqProduct">
+                        <option value="Garlic (लहसुन)">Garlic (लहसुन)</option>
+                        <option value="Onion (प्याज)">Onion (प्याज)</option>
+                        <option value="Dhaniya (धनिया)">Dhaniya (धनिया)</option>
+                        <option value="Ajwain (अजवाइन)">Ajwain (अजवाइन)</option>
+                        <option value="Ashwagandha (अश्वगंधा)">Ashwagandha (अश्वगंधा)</option>
+                        <option value="Safed Musli (सफेद मूसली)">Safed Musli (सफेद मूसली)</option>
+                        <option value="Awala (आंवला)">Awala (आंवला)</option>
+                        <option value="Tulsi / Kalmegh">Tulsi / Kalmegh</option>
+                        <option value="अन्य जड़ी-बूटी / कृषि उत्पाद">अन्य जड़ी-बूटी / कृषि उत्पाद</option>
+                        <!-- Live Stock Status Section -->
+<section id="stockSection" class="rates-section container">
+    <div class="section-header">
+        <h2>📦 लाइव स्टॉक स्थिति (Current Available Stock)</h2>
+        <p>Santu Traders - दुकान पर उपलब्ध माल का विवरण</p>
+    </div>
+
+    <div class="stock-grid" id="publicStockContainer">
+        <!-- Live Stock Cards JS se load hongi -->
+    </div>
+</section>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>संदेश / विवरण (Message / Quantity Details)</label>
+                    <textarea id="eqMessage" rows="4" placeholder="मात्रा (Quantity) या अन्य कोई जानकारी लिखें..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-whatsapp-submit">
+                    💬 Direct WhatsApp Par Bhejein
+                </button>
+            </form>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>developed by somya sharma - Proprietor: Ashok Bhardwaj (9755631229)</p>
+            <p>Shop No. 8, Jamuniya Klan, Neemuch (M.P.)</p>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript Logic -->
+    <script src="script.js"></script>
+</body>
+</html>

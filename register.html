@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Santu Traders</title>
+        <!-- Website Favicon Icon -->
+<link rel="icon" type="image/png" href="LOGO - Copy (3).png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-body">
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo-section">
+                <div class="logo-badge">ST</div>
+                <div class="brand-info">
+                    <h1>SANTU TRADERS</h1>
+                    <p>Neemuch (M.P.)</p>
+                </div>
+            </div>
+            <nav class="navbar">
+                <a href="index.html">← Back to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Registration Form Section -->
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2>Create Account</h2>
+            <p class="auth-sub">Naye Kisan ya Buyer ka Account Banayein</p>
+
+            <form id="registerForm" class="auth-form">
+                <div class="form-group">
+                    <label>Full Name / Pura Naam:</label>
+                    <input type="text" id="regName" placeholder="Enter Full Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Mobile Number:</label>
+                    <input type="tel" id="regMobile" placeholder="10 Digit Mobile Number" required>
+                </div>
+<div class="form-group">
+    <label>Email Address / ईमेल आईडी:</label>
+    <input type="email" id="regEmail" placeholder="example@gmail.com" required>
+</div>
+                <div class="form-group">
+                    <label>City / Gaon (Village):</label>
+                    <input type="text" id="regLocation" placeholder="Enter Location" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Set Password:</label>
+                    <input type="password" id="regPassword" placeholder="Create Password" required>
+                </div>
+
+                <button type="submit" class="btn btn-login-submit">Register Account</button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Pehle se account hai? <a href="login.html">Login Here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>© Santu Traders - Ashok Bhardwaj (9755631229)</p>
+        </div>
+    </footer>
+
+    <script src="auth.js"></script>
+</body>
+</html>

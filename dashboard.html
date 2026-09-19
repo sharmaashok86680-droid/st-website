@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Santu Traders</title>
+        <!-- Website Favicon Icon -->
+<link rel="icon" type="image/png" href="LOGO - Copy (3).png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+
+    <!-- Dashboard Header -->
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo-section">
+                <div class="logo-badge">ST</div>
+                <div class="brand-info">
+                    <h1>SANTU TRADERS</h1>
+                    <p>Admin Control Panel</p>
+                </div>
+            </div>
+            <div class="header-contact">
+                <span class="owner-name">Welcome, Ashok Bhardwaj Ji</span>
+                <a href="index.html" class="call-btn" id="logoutBtn">🚪 Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admin Main Section -->
+    <div class="container dashboard-container">
+        
+        <!-- Welcome Banner -->
+        <div class="dashboard-welcome">
+            <h2>🌾 Mandi Bhav & Rate Update Manager</h2>
+            <p>Neemuch Mandi ke daily rates update karein aur registered kisano ka record dekhein.</p>
+        </div>
+
+        <div class="dashboard-grid">
+        <!-- Simple Live Stock Update Card -->
+<div class="dashboard-card">
+    <h3>📦 Live Stock Status Update</h3>
+    <form id="stockForm" class="auth-form">
+        <div class="form-group">
+            <label>Crop / Product:</label>
+            <select id="stockCrop" required>
+                <option value="Garlic (लहसुन)">Garlic (लहसुन)</option>
+                <option value="Onion (प्याज)">Onion (प्याज)</option>
+                <option value="Dhaniya (धनिया)">Dhaniya (धनिया)</option>
+                <option value="Ajwain (अजवाइन)">Ajwain (अजवाइन)</option>
+                <option value="Ashwagandha">Ashwagandha</option>
+                <option value="Safed Musli">Safed Musli</option>
+                <option value="Awala (आंवला)">Awala (आंवला)</option>
+                <option value="Tulsi / Kalmegh">Tulsi / Kalmegh</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Quantity (मात्रा):</label>
+            <input type="text" id="stockQty" placeholder="e.g. 50 Bori / 100 Qtl" required>
+        </div>
+
+        <div class="form-group">
+            <label>Status:</label>
+            <select id="stockStatus" required>
+                <option value="Available">🟢 Ready Stock Available</option>
+                <option value="Limited">🟡 Limited Stock Left</option>
+                <option value="Sold Out">🔴 Sold Out (खत्म)</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-login-submit">Update Stock</button>
+    </form>
+</div>
+            
+            <!-- Form: Add/Update Mandi Rate -->
+            <div class="dashboard-card">
+                <h3>📝 Aaj Ka Mandi Bhav Set Karein</h3>
+                <form id="rateForm" class="auth-form">
+                    <div class="form-group">
+                        <label>Utpad Ka Naam (Crop/Herb):</label>
+                        <select id="cropName" required>
+                            <option value="Garlic (लहसुन)">Garlic (लहसुन)</option>
+                            <option value="Onion (प्याज)">Onion (प्याज)</option>
+                            <option value="Dhaniya (धनिया)">Dhaniya (धनिया)</option>
+                            <option value="Ajwain (अजवाइन)">Ajwain (अजवाइन)</option>
+                            <option value="Ashwagandha">Ashwagandha (अश्वगंधा)</option>
+                            <option value="Safed Musli">Safed Musli (सफेद मूसली)</option>
+                            <option value="Awala (आंवला)">Awala (आंवला)</option>
+                            <option value="Tulsi & Kalmegh">Tulsi / Kalmegh</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Minimum Bhav (₹ per Qtl/Kg):</label>
+                        <input type="number" id="minPrice" placeholder="e.g. 8000" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Maximum Bhav (₹ per Qtl/Kg):</label>
+                        <input type="number" id="maxPrice" placeholder="e.g. 12500" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-login-submit">Update Rates Live</button>
+                    <!-- Digital Bill Generator Section -->
+<div class="dashboard-card full-width-card">
+    <h3>🧾 Digital Bill / Purchase Receipt Generator</h3>
+    <form id="billForm" class="auth-form bill-form-grid">
+        <div class="form-group">
+            <label>Kisan / Buyer Ka Naam (Customer Name):</label>
+            <input type="text" id="billName" placeholder="Naam likhein" required>
+        </div>
+<!-- Daily Hisab-Kitab (Khata Manager) Section -->
+<div class="dashboard-card full-width-card" style="margin-top: 30px;">
+    <h3>📖 दुकान का रोज़ का हिसाब-किताब (Daily Khata & Expense Tracker)</h3>
+
+    <!-- Summary Total Cards -->
+    <div class="khata-summary-grid">
+        <div class="summary-box income-box">
+            <h4>कुल आवक (Total Income)</h4>
+            <p>₹ <span id="totalIncome">0</span></p>
+        </div>
+        <div class="summary-box expense-box">
+            <h4>कुल खर्च (Total Expense)</h4>
+            <p>₹ <span id="totalExpense">0</span></p>
+        </div>
+        <div class="summary-box balance-box">
+            <h4>बचत / बैलेंस (Net Balance)</h4>
+            <p>₹ <span id="netBalance">0</span></p>
+        </div>
+    </div>
+
+    <!-- Entry Form -->
+    <form id="khataForm" class="auth-form bill-form-grid" style="margin-top: 20px;">
+        <div class="form-group">
+            <label>तारीख (Date):</label>
+            <input type="date" id="khataDate" required>
+        </div>
+
+        <div class="form-group">
+            <label>विवरण / नाम (Details / Description):</label>
+            <input type="text" id="khataTitle" placeholder="e.g. Lahsun Commission / Labour Kharcha" required>
+        </div>
+
+        <div class="form-group">
+            <label>प्रकार (Type):</label>
+            <select id="khataType" required>
+                <option value="income">🟢 आवक / जमा (Income)</option>
+                <option value="expense">🔴 खर्च / उठाई (Expense)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>रकम (Amount ₹):</label>
+            <input type="number" id="khataAmount" placeholder="e.g. 2500" required>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-login-submit" style="margin-top: 25px;">
+                ➕ एंट्री जोड़ें (Add Entry)
+            </button>
+        </div>
+    </form>
+
+    <!-- Khata Entries History Table -->
+    <div class="table-responsive" style="margin-top: 25px;">
+        <table class="rate-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Details / विवरण</th>
+                    <th>Type</th>
+                    <th>Amount (₹)</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="khataTableBody">
+                <!-- Dynamic Entries Load Here -->
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+        <div class="form-group">
+            <label>Mobile Number:</label>
+            <input type="tel" id="billPhone" placeholder="Mobile Number" required>
+        </div>
+
+        <div class="form-group">
+            <label>Fasal / Product:</label>
+            <select id="billProduct" required>
+                <option value="Garlic (लहसुन)">Garlic (लहसुन)</option>
+                <option value="Onion (प्याज)">Onion (प्याज)</option>
+                <option value="Dhaniya (धनिया)">Dhaniya (धनिया)</option>
+                <option value="Ashwagandha">Ashwagandha</option>
+                <option value="Other Herb">Other Herb</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Weight (KWT / Quintal / Kg):</label>
+            <input type="text" id="billWeight" placeholder="e.g. 25 Quintal" required>
+        </div>
+
+        <div class="form-group">
+            <label>Rate (Per Quintal/Kg ₹):</label>
+            <input type="number" id="billRate" placeholder="e.g. 9500" required>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-login-submit" style="margin-top: 25px;">
+                🖨️ Generate & Print Bill
+            </button>
+        </div>
+    </form>
+
+    <!-- Printable Bill Preview Area -->
+    <div id="printableBill" class="bill-preview-box" style="display:none;">
+        <div class="bill-header">
+            <h2>SANTU TRADERS</h2>
+            <p>Supplier & Commission Agent | Shop No. 8, Jamuniya Klan, Neemuch (M.P.)</p>
+            <p>Proprietor: Ashok Bhardwaj (Mob: 9755631229)</p>
+            <hr>
+        </div>
+        <div class="bill-details">
+            <p><strong>Customer Name:</strong> <span id="outName"></span></p>
+            <p><strong>Mobile:</strong> <span id="outPhone"></span></p>
+            <p><strong>Date:</strong> <span id="outDate"></span></p>
+            <p><strong>Crop/Product:</strong> <span id="outProduct"></span></p>
+            <p><strong>Total Weight:</strong> <span id="outWeight"></span></p>
+            <p><strong>Applied Rate:</strong> ₹<span id="outRate"></span> / Qtl</p>
+            <h3 class="total-amount-box">Total Amount Payble: ₹<span id="outTotal"></span></h3>
+        </div>
+        <div class="bill-footer">
+            <p><em>Thank you for trading with Santu Traders! Signature: _________</em></p>
+        </div>
+        <button onclick="window.print()" class="btn btn-call" style="margin-top: 15px;">🖨️ Print This Receipt</button>
+    </div>
+</div>
+                </form>
+            </div>
+
+            <!-- Table: Live Mandi Rates Preview -->
+            <div class="dashboard-card">
+                <h3>📊 Live Mandi Bhav Preview</h3>
+                <div class="table-responsive">
+                    <table class="rate-table">
+                        <thead>
+                            <tr>
+                                <th>Crop / Herb</th>
+                                <th>Min Rate (₹)</th>
+                                <th>Max Rate (₹)</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rateTableBody">
+                            <!-- Dynamic Content inserted via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>© Santu Traders Admin Dashboard - Ashok Bhardwaj (9755631229)</p>
+        </div>
+    </footer>
+
+    <script src="auth.js"></script>
+</body>
+</html>
